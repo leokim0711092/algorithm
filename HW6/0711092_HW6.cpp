@@ -40,9 +40,9 @@ int main(){
 	cout<<endl;
 	cout <<"test:"<<endl;
 	int X1[100],Y1[100];
-	for(int time=0;time<10;time++){
-		int m1 = time*3+5;
-		int n1 = time*2+7;
+	for(int time=1;time<6;time++){
+		int m1 = time*20;
+		int n1 = time*10;
 		for(int i = 0;i<m1;i++) {
 			if(i== 0){
 				X1[i]=0;
@@ -58,13 +58,13 @@ int main(){
 			}
 		} ;
 
-        	cout <<"X"<< time+1 <<": ";
+        	cout <<"X"<< time <<": ";
         	for(int i=1;i<m1;i++){
         	cout <<X1[i]<<" ";
         	}
         	cout<<endl;
 
-		cout <<"Y"<< time+1 <<": ";
+		cout <<"Y"<< time <<": ";
                 for(int i=1;i<n1;i++){
                 cout <<Y1[i]<<" ";
                 }
@@ -74,14 +74,14 @@ int main(){
 		L_pl_S ans1 = LCS(X1,Y1,m1,n1);
 		auto LCS_stop = chrono::steady_clock::now();
         	cout <<"LCS = "<< ans1.len<< endl;
-        	cout <<"Z" <<time+1<<"= ";
+        	cout <<"Z" <<time<<"= ";
 		
 		auto print_start = chrono::steady_clock::now();
         	print_LCS(ans1.b,X1,m1-1,n1-1);
 		auto print_stop = chrono::steady_clock::now();
 		cout <<endl;
-		cout<< "m"<<time+1<<"*"<<"n"<<time+1<<"= "<<m1*n1<<endl;
-		cout<< "m"<<time+1<<"+"<<"n"<<time+1<<"= "<<m1+n1<<endl;
+		cout<< "m"<<time<<"*"<<"n"<<time<<"= "<<m1*n1<<endl;
+		cout<< "m"<<time<<"+"<<"n"<<time<<"= "<<m1+n1<<endl;
 		cout << "LCS time = " << fixed << setprecision(7) << (double(chrono::duration_cast <chrono::nanoseconds>(LCS_stop - LCS_start).count())) / 1e9 << endl;
 		cout << "Print LCS time = " << fixed << setprecision(7) << (double(chrono::duration_cast <chrono::nanoseconds>(print_stop - print_start).count())) / 1e9 << endl;
         	cout<<endl;
