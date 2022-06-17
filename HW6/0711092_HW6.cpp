@@ -41,8 +41,8 @@ int main(){
 	cout <<"test:"<<endl;
 	int X1[100],Y1[100];
 	for(int time=1;time<6;time++){
-		int m1 = time*20;
-		int n1 = time*10;
+		int m1 = 100;
+		int n1 = 100;
 		for(int i = 0;i<m1;i++) {
 			if(i== 0){
 				X1[i]=0;
